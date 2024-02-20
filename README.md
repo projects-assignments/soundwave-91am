@@ -1,70 +1,30 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/nYxmF646)
-# SOUNDWAVE: un proyecto de React con estilo
+# React + TypeScript + Vite
 
-## Introducción
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-SoundWave, se ha posicionado en el mercado como la competencia directa de Spotify. Con una calidad de sonido extraordinaria y la gran variedad de canciones que ofrece está ganando adeptos a pasos agigantados. No obstante, quieren acelerar el proceso de subscripción a su plataforma con una nueva campaña de marketing digital.
+Currently, two official plugins are available:
 
-Han contactado contigo por tu reputación como maquetadora web, y te piden que lleves a cabo el desarrollo de una landing page para buscar nuevos suscriptores. Formas parte de un equipo interdisciplinar donde una UX Designer ya ha construido la maqueta que tendrás que llevar al código. Posteriormente, el equipo de marketing digital posicionará la página en los navegadores.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## Requerimientos técnicos
+## Expanding the ESLint configuration
 
-- La web deberá estar desarrollada en React con TypeScript.
-- La web deberá ser responsive.
-- Los estilos deberán aplicarse con styled components, react-bootstrap, material ui o shadcn+tailwindcss.
-- La web deberá ser fiel al prototipo.
-- La web deberá estar desplegada.
-- Se deberá usar un tablero Kanban para organizar las tareas del proyecto.
-- Se investigará qué es react-router-dom y se utilizará para las rutas de la navbar.
-- Se aplicará Atomic Design.
-- Podéis utilizar hooks y props (pero no es imprescindible).
+If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
 
-## Recursos
+- Configure the top-level `parserOptions` property like this:
 
-<details>
-  <summary>Las imágenes se encuentran en la carpeta assets</summary>
+```js
+export default {
+  // other rules...
+  parserOptions: {
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    project: ['./tsconfig.json', './tsconfig.node.json'],
+    tsconfigRootDir: __dirname,
+  },
+}
+```
 
-    - landing-page-girl.png
-    - covers.jpg
-    - more.svg
-    - albums.svg
-    - logo.png
-    - microphone.svg
-    - twitter.svg
-
-
-</details>
-
-- **[Mockup](https://simplonline-v3-prod.s3.eu-west-3.amazonaws.com/media/file/pdf/46391d6c-b766-4ed3-a121-72c9b2a15960.pdf)**
-- **[Carta gráfica](https://simplonline-v3-prod.s3.eu-west-3.amazonaws.com/media/file/pdf/0b528713-7dbc-4261-b4b7-0070dd4e7021.pdf)**
-- **[How to style React](https://www.freecodecamp.org/news/how-to-style-a-react-app/)**
-- **[Styled-components](https://styled-components.com/)**
-- **[React-Bootstrap](https://react-bootstrap.github.io/)**
-- **[shadcn/ui](https://ui.shadcn.com/)**
-- **[MUI Core: Ready to use components, free forever](https://mui.com/core/)**
-- **[thinking in react](https://react.dev/learn/thinking-in-react)**
-- **[Vite-Typescript](https://vitejs.dev/guide/)**
-- **[React-Router](https://reactrouter.com/en/6.22.0)**
-
-
-
-## Entregables
-
-- Repositorio de GitHub.
-- Enlace del despliegue.
-
-## Modalidad
-
-- Trabajo individual.
-- Este sprint, durará una semana. La entrega será el 15/02/2024
-- Presentación: Se hará una presentación en conjunto por estilo donde se expondrán las dificultades surgidas y cómo se han resuelto.
-- El feedback a los proyectos se dará de manera individual vía classroom.
-
-## Rúbrica de evaluación
-
-|                                                        | 1                                                                                    | 2                                                                                      | 3                                                                                                                                                                                                                                                                         |
-| ------------------------------------------------------ | ------------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Indicador                                              | Deficiente                                                                           | Regular                                                                                | Excelente                                                                                                                                                                                                                                                                 |
-| Maquetar una aplicación                                | La maquetación no es conforme al mockoup. Hay diferencias notables con el prototipo. | La maquetación respeta la carta gráfica. Pero no termina de ser totalmente responsive. | La maquetación respeta la carta gráfica de la empresa. Adaptar las interfaces al tipo de dispositivo teniendo en cuenta la experiencia del usuario y, en el caso de los dispositivos móviles, las características ergonómicas.                                            |
-| Desarrollar una interfaz de usuario web dinámica       | Las interacciones del lado del cliente (front-end) no funcionan.                     | Las interacciones del lado del cliente (front-end) si funcionan.                       | La web está alineada con la experiencia de usuario, incluyendo la experiencia móvil. La arquitectura de la aplicación se ajusta a las buenas prácticas de desarrollo. Los test garantizan que la página web cumplen los requisitos descritos en las especificaciones.     |
-| Crear una interfaz de usuario web estática y adaptable | No se aplican los cambios necesarios solicitados en la descripción de necesidades.   | Se aplican los cambios necesarios solicitados en la descripción de necesidades.        | La interfaz se realiza conforme al diseño de la aplicación. La página web respeta la carta gráfica de la empresa. Se respetan las buenas prácticas de estructuración. La app es accesible desde el navegador, incluso desde un móvil. Se adapta al tamaño de la pantalla. |
+- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
+- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
+- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
